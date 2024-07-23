@@ -27,8 +27,7 @@ const options = {
       })
       .catch(err=> {
         console.log("error");
-    // loader.style.display = "block"
-
+        loader2.classList.remove("visible");
       })
     
       let imageUrl = "https://image.tmdb.org/t/p/w500";

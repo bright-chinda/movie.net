@@ -103,6 +103,8 @@ const options = {
             loader.classList.remove("visible")
         }, 4000)
           pageText.innerHTML = "Results for " + `${searchInput.value}`;
+          searchInput.value = "";
+
         })
         .catch(err => {
           loader.classList.remove("visible")
