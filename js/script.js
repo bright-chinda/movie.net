@@ -102,7 +102,7 @@ const options = {
           // loader.classList.remove("visible")
           setTimeout(()=>{
             loader.classList.remove("visible")
-        }, 5000)
+        }, 4000)
           pageText.innerHTML = "Results for " + `${searchInput.value}`;
         })
         .catch(err => {
