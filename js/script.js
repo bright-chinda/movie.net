@@ -99,7 +99,6 @@ const options = {
         .then(data => {
           movies(data.results)
           console.log(data);
-          // loader.classList.remove("visible")
           setTimeout(()=>{
             loader.classList.remove("visible")
         }, 4000)

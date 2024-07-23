@@ -11,18 +11,24 @@ const options = {
 
     let url = new URLSearchParams(window.location.search);
     let movieId = url.get("id")
-    // let loader = document.querySelector(".loader2-container")
-    // loader.classList.add("visible")
-    // console.log(loader);
-
+    let loader2 = document.querySelector(".loader2-container");
+    loader2.classList.add("visible");
+    console.log(loader2);
+      loader2.classList.add("visible");
       fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=en-US`, options)
+      
       .then(response => response.json())
       .then(data => {
         console.log(data);
         movieInfo(data)
+        setTimeout(() => {
+        loader2.classList.remove("visible");
+        }, 4000);
       })
       .catch(err=> {
         console.log("error");
+    // loader.style.display = "block"
+
       })
     
       let imageUrl = "https://image.tmdb.org/t/p/w500";
@@ -87,7 +93,7 @@ const options = {
           let starIcon = document.querySelector(".star-icon")
           let halfStarIcon = document.querySelector(".half-star-icon")
           // let highColor = document.querySelector(".green")
-          if (vote_average >=7) {
+          if (vote_average >=7 ) {
             getcolor.classList.add("green")
             starIcon.classList.add("visible")
           }else if(vote_average >=5){
@@ -99,20 +105,6 @@ const options = {
       }
 
      
-      // function getcolor (vote){
-      //   if(vote >= 8){
-      //     return green
-      //   }else if (vote >= 5){
-      //     return "blue"
-      //   }else{
-      //     return "red"
-      //   }
-      // }
-      // console.log(highColor);
-
-    
-
-      // movieInfo(data)
       
       
     // }

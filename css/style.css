@@ -10,18 +10,9 @@
 
 html{
   scroll-behavior: smooth;
-  /* background-color: blue; */
-  /* height: 0; */
-  /* height: 100vh; */
 }
 
 body{
-  /* display: flex;
-  flex-direction: column; */
-  /* height: 0 !important; */
-  /* background-color: red; */
-  /* height: 100vh; */
-  /* overflow-y: scroll; */
   font-family: "EB Garamond", serif;
 }
 
