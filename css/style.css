@@ -388,6 +388,15 @@ footer{
 }
 
 @media screen and (max-width:690px) {
+  .swiper-wrapper{
+    padding: 30px 20px;
+  }
+  .movies{
+    width: 100%;
+  }
+  .movie-card{
+    width: 100%;
+  }
   .search-movie-body input{
     width: 50%;
   }
