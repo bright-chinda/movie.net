@@ -103,12 +103,17 @@ const options = {
       let colorBody = document.querySelector(".movie-container")
       let colorModeTextContent = document.querySelector(".color-mode-text")
 
+      // colorBody.innerHTML=localStorage.getItem("black")
+
+
       colorModeButton.addEventListener("click",()=> {
         colorBody.style.backgroundColor = "black";
         darkModeIcon.classList.toggle("visible")
         if (darkModeIcon.classList.contains("visible")) {
           lightModeIcon.style.display = "none";
-          colorModeTextContent.textContent = "Dark Mode"
+          // colorModeTextContent.textContent = "Dark Mode"
+          // localStorage.setItem("black")
+          // colorBody.innerHTML=localStorage.getItem("black")
         }else if (!darkModeIcon.classList.contains("visible")){
           lightModeIcon.style.display = "block";
           colorBody.style.backgroundColor = "white";

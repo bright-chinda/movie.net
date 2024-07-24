@@ -14,7 +14,9 @@ const options = {
     let loader2 = document.querySelector(".loader2-container");
     loader2.classList.add("visible");
     console.log(loader2);
-      loader2.classList.add("visible");
+    loader2.classList.add("visible");
+
+
       fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=en-US`, options)
       
       .then(response => response.json())
@@ -31,7 +33,7 @@ const options = {
       })
     
       let imageUrl = "https://image.tmdb.org/t/p/w500";
-      let backdropUrl = "https://image.tmdb.org/t/p/w500";
+      // let backdropUrl = "https://image.tmdb.org/t/p/w500";
 
       function movieInfo(data) {
           console.log(data);

@@ -68,6 +68,10 @@ header{
   align-items: center;
   gap: 20px;
 }
+.first-header-section a{
+  text-decoration: none;
+  color: white;
+}
 .app-name{
   color: white;
   text-decoration: none;
@@ -109,6 +113,13 @@ header{
   text-decoration: none;
   font-weight: 500;
 }
+.tv-class{
+  transition: 0.3s;
+}
+.tv-class:hover{
+  text-decoration: underline;
+}
+
 
 .learn-to-download{
   color: white;
@@ -120,6 +131,9 @@ header{
   text-decoration: underline;
 }
 .background-color-mode{
+  display: flex;
+  align-items: center;
+  gap: 20px;
   position: relative;
 }
 .color-mode-button{
@@ -395,6 +409,21 @@ footer{
   filter: invert(1);
 }
 
+/* tv section */
+.Tv-card{
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 370px;
+  padding: 20px 20px;
+  /* background-color: #4ce19d; */
+  text-decoration: none;
+  background-color: #04376b;
+  border-radius: 5px;
+  position: relative;
+}
+/* tv section ends here*/
+
 
 
 
@@ -434,6 +463,9 @@ footer{
     width: 100%;
   }
   .movie-content-image{
+    width: 100%;
+  }
+  .Tv-card{
     width: 100%;
   }
  
