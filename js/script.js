@@ -1,18 +1,4 @@
-//     let posts = [
-//         {title:"furiosa", overview:"i like dog"},
-//         {title:"supacell", overview:"i like dog"},
-//         {title:"batman", overview:"i like dog"}
-//       ];
 
-// function getpost (){
-//   let output = "";
-//   posts.forEach(element => {
-//     output = `<div>${posts.title}</div>`
-//   });
-//   document.body.innerHTML = output;
-// console.log(posts);
-// }
-// getpost ()
 
 const options = {
     method: 'GET',
@@ -27,7 +13,6 @@ const options = {
   
   let throwError = document.querySelector(".movie-error")
 
-  // function movies (){
     fetch('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1', options)
     .then((res) => res.json())
     .then((value) => {
@@ -84,7 +69,6 @@ const options = {
 
       });
     }
-  // }
 
     // let searchBtn = document.querySelector(".search-btn")
     let searchInput = document.querySelector("#search-input")
@@ -111,15 +95,27 @@ const options = {
         })
         
 
-
-        if (searchInput.value) {
-
-        }else{
-          console.log("error");
-          // movies(value.results)
-        }
-
       }
+
+      let lightModeIcon = document.querySelector(".light-mode-icon")
+      let darkModeIcon = document.querySelector(".dark-mode-icon")
+      let colorModeButton = document.querySelector(".color-mode-button")
+      let colorBody = document.querySelector(".movie-container")
+      let colorModeTextContent = document.querySelector(".color-mode-text")
+
+      colorModeButton.addEventListener("click",()=> {
+        colorBody.style.backgroundColor = "black";
+        darkModeIcon.classList.toggle("visible")
+        if (darkModeIcon.classList.contains("visible")) {
+          lightModeIcon.style.display = "none";
+          colorModeTextContent.textContent = "Dark Mode"
+        }else if (!darkModeIcon.classList.contains("visible")){
+          lightModeIcon.style.display = "block";
+          colorBody.style.backgroundColor = "white";
+          colorModeTextContent.textContent = "Light Mode"
+        }
+      })
+
 
 
 

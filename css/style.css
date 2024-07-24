@@ -54,14 +54,19 @@ body{
 /* loader section  ends here*/
 
 
-
+/* header */
 header{
   display: flex;
   align-items: center;
-  gap: 20px;
+  justify-content: space-between;
   padding: 20px 20px;
   background-color: #04376b;
   color: white;
+}
+.first-header-section{
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 .app-name{
   color: white;
@@ -114,6 +119,41 @@ header{
 .learn-to-download:hover{
   text-decoration: underline;
 }
+.background-color-mode{
+  position: relative;
+}
+.color-mode-button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.color-mode-text{
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 110px;
+  height: 30px;
+  background-color: white;
+  color: black;
+  border-radius: 3px;
+  position: absolute;
+  top: 35px;
+  left: -70px;
+}
+.background-color-mode:hover .color-mode-text{
+  display: flex;
+}
+.dark-mode-icon{
+  display: none;
+}
+.visible.dark-mode-icon{
+  display: block;
+}
+/* header  ends here*/
+
 
 .image-bacground{
   display: flex;
@@ -123,7 +163,7 @@ header{
   background-color: #04376b;
   width: 100%;
   height: 400px;
-  position: relative;
+  /* position: relative; */
   object-fit: cover;
 }
 .image-bacground .img{
@@ -174,18 +214,11 @@ header{
 .movie-container{
   width: 100%;
   /* height: 100vh; */
-  background-color: white;
+  /* background-color: white; */
   /* background-color: #020d18; */
   padding: 20px 20px;
 }
-/* .mainn{
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  height: 800px;
-  background-color: aquamarine;
-} */
+
 .swiper-wrapper{
   display: flex;
   justify-content: center;
@@ -379,6 +412,9 @@ footer{
 }
 
 @media screen and (max-width:690px) {
+  .movie-text-hovered{
+    display: none;
+  }
   .swiper-wrapper{
     padding: 30px 20px;
   }
