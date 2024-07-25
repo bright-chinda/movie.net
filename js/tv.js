@@ -10,7 +10,7 @@ const options = {
     .then(response => response.json())
     .then((data) =>{
       movies(data.results)
-      console.log(movies);
+      console.log(data);
     })
   
     
@@ -20,7 +20,7 @@ const options = {
     function movies(data){
         
       data.forEach(movies => {
-        const {poster_path,name,overview} = movies;
+        const {poster_path,name,overview,first_air_date} = movies;
         let createMovie = document.createElement('div')
         createMovie.classList.add("movies");
         createMovie.innerHTML = `
@@ -32,7 +32,7 @@ const options = {
             <div class="movie-info">
                 <div class="info-content">
                 <h5>${name}</h5>
-                <p>Release: <span></span></p>
+                <p>Release: <span>${first_air_date}</span></p>
                 </div>
                 <div class="overview-body">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="white"><path d="M240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h480q33 0 56.5 23.5T800-800v640q0 33-23.5 56.5T720-80H240Zm0-80h480v-640h-80v280l-100-60-100 60v-280H240v640Zm0 0v-640 640Zm200-360 100-60 100 60-100-60-100 60Z"/></svg>

@@ -109,7 +109,7 @@ const options = {
       // declare enabled dark mood
       let enableDarkMood = () =>{
         colorBody.classList.add("darkmood");
-        localStorage.setItem("darkMood", "enabled")
+        localStorage.setItem("darkMood", "enabled");
       }
       // declare enabled dark mood
 
@@ -117,14 +117,14 @@ const options = {
       // declare disabled dark mood
       let disableDarkmood = () =>{
         colorBody.classList.remove("darkmood");
-        localStorage.setItem("darkMood", null)
+        localStorage.setItem("darkMood", null);
       }
       // declare disabled dark mood
 
 
       if (darkMood === "enabled") {
         enableDarkMood()
-        colorModeTextContent.textContent = "Dark Mode"
+        colorModeTextContent.textContent = "Dark Mode";
         darkModeIcon.style.display = "block";
         lightModeIcon.style.display = "none";
         colorModeTextContent.style.backgroundColor = "black";
@@ -140,7 +140,7 @@ const options = {
           colorModeTextContent.style.color = "white";
         }else if (darkMood == "enabled") {
           disableDarkmood()
-          colorModeTextContent.textContent = "Light Mode"
+          colorModeTextContent.textContent = "Light Mode";
           colorModeTextContent.style.backgroundColor = "white";
           colorModeTextContent.style.color = "black";
         }
