@@ -458,7 +458,7 @@ footer{
 
 @media screen and (max-width:690px) {
   .hero-section-text{
-    font-size: 23px;
+    font-size: 25px;
     position: absolute;
     top: 24%;
   }
