@@ -200,6 +200,8 @@ header{
   border-radius: 30px;
   overflow: hidden;
   position: absolute;
+  top: 40%;
+  transform: translateY(50%);
 }
 .search-movie-body input{
   width: 80%;
@@ -213,7 +215,6 @@ header{
   font-size: 18px;
   /* color: red; */
 }
-
 .search-btn{
   width: 14%;
   height: 100%;
@@ -222,6 +223,20 @@ header{
   font-size: 17px;
   border-radius: 30px;
   border: none;
+  cursor: pointer;
+}
+
+.hero-section-text{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  width: 80%;
+  color: white;
+  font-size: 50px;
+  position: absolute;
+  top: 15%;
+  transform: translateY(50%);
 }
 
 /* movie cards section */
@@ -442,6 +457,11 @@ footer{
 }
 
 @media screen and (max-width:690px) {
+  .hero-section-text{
+    font-size: 23px;
+    position: absolute;
+    top: 24%;
+  }
   .movie-text-hovered{
     display: none;
   }
