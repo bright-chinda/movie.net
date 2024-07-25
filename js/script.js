@@ -97,29 +97,67 @@ const options = {
 
       }
 
+      // dark mood functionality
       let lightModeIcon = document.querySelector(".light-mode-icon")
       let darkModeIcon = document.querySelector(".dark-mode-icon")
       let colorModeButton = document.querySelector(".color-mode-button")
       let colorBody = document.querySelector(".movie-container")
       let colorModeTextContent = document.querySelector(".color-mode-text")
 
-      // colorBody.innerHTML=localStorage.getItem("black")
+      let darkMood = localStorage.getItem("darkMood")
+
+      // declare enabled dark mood
+      let enableDarkMood = () =>{
+        colorBody.classList.add("darkmood");
+        localStorage.setItem("darkMood", "enabled")
+      }
+      // declare enabled dark mood
 
 
-      colorModeButton.addEventListener("click",()=> {
-        colorBody.style.backgroundColor = "black";
-        darkModeIcon.classList.toggle("visible")
-        if (darkModeIcon.classList.contains("visible")) {
-          lightModeIcon.style.display = "none";
-          // colorModeTextContent.textContent = "Dark Mode"
-          // localStorage.setItem("black")
-          // colorBody.innerHTML=localStorage.getItem("black")
-        }else if (!darkModeIcon.classList.contains("visible")){
-          lightModeIcon.style.display = "block";
-          colorBody.style.backgroundColor = "white";
+      // declare disabled dark mood
+      let disableDarkmood = () =>{
+        colorBody.classList.remove("darkmood");
+        localStorage.setItem("darkMood", null)
+      }
+      // declare disabled dark mood
+
+
+      if (darkMood === "enabled") {
+        enableDarkMood()
+        colorModeTextContent.textContent = "Dark Mode"
+        darkModeIcon.style.display = "block";
+        lightModeIcon.style.display = "none";
+        colorModeTextContent.style.backgroundColor = "black";
+        colorModeTextContent.style.color = "white";
+      }
+
+      colorModeButton.addEventListener("click", () =>{
+        darkMood = localStorage.getItem("darkMood")
+        if (darkMood !== "enabled") {
+          enableDarkMood()
+          colorModeTextContent.textContent = "Dark Mode";
+          colorModeTextContent.style.backgroundColor = "black";
+          colorModeTextContent.style.color = "white";
+        }else if (darkMood == "enabled") {
+          disableDarkmood()
           colorModeTextContent.textContent = "Light Mode"
+          colorModeTextContent.style.backgroundColor = "white";
+          colorModeTextContent.style.color = "black";
         }
+        // checking and changing mood icons
+        if (colorBody.classList.contains("darkmood")) {
+          darkModeIcon.style.display = "block";
+          lightModeIcon.style.display = "none";
+        }else if(!colorBody.classList.contains("darkmood")){
+          darkModeIcon.style.display = "none";
+          lightModeIcon.style.display = "block";
+          // colorModeTextContent.textContent = "Light Mode"
+        }
+        // checking and changing mood icons ends here
       })
+
+      // dark mood functionality ends here
+
 
 
 
